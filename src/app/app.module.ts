@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -18,10 +18,12 @@ import { AppRoutingModule } from './app.routing';
 //Layouts
 import { FullLayoutComponent } from './layouts/full-layout.component';
 import { SimpleLayoutComponent } from './layouts/simple-layout.component';
+import { AppConfigService } from './app-config.service';
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     // ChartsModule
@@ -38,7 +40,7 @@ import { SimpleLayoutComponent } from './layouts/simple-layout.component';
   providers: [{
     provide: LocationStrategy,
     useClass: HashLocationStrategy
-  }],
+  },AppConfigService],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
