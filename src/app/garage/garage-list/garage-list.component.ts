@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation, OnInit } from '@angular/core';
-// import { MdDialog } from '@angular/material';
-// import { GarageAddComponent } from '../garage-add/garage-add.component';
+import { MdDialog } from '@angular/material';
+import { GarageAddComponent } from '../garage-add/garage-add.component';
 import { GarageService } from '../garage.service';
 @Component({
 	moduleId: module.id,
@@ -11,8 +11,8 @@ import { GarageService } from '../garage.service';
 })
 export class GarageListComponent implements OnInit {
 	constructor(
-		private garageService: GarageService
-		
+		private garageService: GarageService,
+		private dialog: MdDialog
 		) {
 
 	}
@@ -23,6 +23,16 @@ export class GarageListComponent implements OnInit {
 					console.log(data);
 				}
 			)
+	}
+
+	showGarageAdd() {
+		let dialogRef = this.dialog.open(GarageAddComponent);
+		dialogRef.afterClosed()
+				.subscribe(
+					(result) => {
+						
+					}
+				)
 	}
 	rows = [
 		{
