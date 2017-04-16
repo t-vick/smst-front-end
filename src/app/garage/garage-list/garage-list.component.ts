@@ -1,7 +1,7 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 // import { MdDialog } from '@angular/material';
 // import { GarageAddComponent } from '../garage-add/garage-add.component';
-
+import { GarageService } from '../garage.service';
 @Component({
 	moduleId: module.id,
 	selector: 'garage-list',
@@ -9,7 +9,21 @@ import { Component, ViewEncapsulation } from '@angular/core';
 	styleUrls: ['./garage-list.component.css'],
 	encapsulation: ViewEncapsulation.None,
 })
-export class GarageListComponent {
+export class GarageListComponent implements OnInit {
+	constructor(
+		private garageService: GarageService
+		
+		) {
+
+	}
+	ngOnInit() {
+		this.garageService.getAllMaps()
+			.subscribe(
+				(data) => {
+					console.log(data);
+				}
+			)
+	}
 	rows = [
 		{
 			name:'t-vick',

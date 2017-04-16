@@ -4,7 +4,7 @@ import { GarageObjAddComponent } from '../garage-obj-add/garage-obj-add.componen
 import { Cell } from '../model/cell.model';
 import { Road } from '../model/road.model';
 
-import { GarageMapService } from './garage-map.service';
+import { GarageService } from '../garage.service';
 @Component({
 	moduleId: module.id,
 	selector: 'smst-garage-map',
@@ -16,7 +16,7 @@ export class GarageMapComponent implements OnInit, DoCheck, AfterViewInit {
 
     private boxSize: number;
     constructor(
-        private garageMapService: GarageMapService, 
+        private garageService: GarageService, 
         private el: ElementRef) {
   	
     }
@@ -25,7 +25,7 @@ export class GarageMapComponent implements OnInit, DoCheck, AfterViewInit {
         // this.option = new Object();
         // this.option.roadList = new Array<Road>();
         // this.option.cellList = new Array<Cell>();
-        // this.garageMapService.getRoads(1)
+        // this.garageService.getRoads(1)
         // .subscribe(
         //     (data) => {
         //         for (let road  of data.floors[0].roads) {
