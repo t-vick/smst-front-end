@@ -6,7 +6,16 @@
             </button>
         </div>
         <div>
-            <ngx-datatable class="material" [rows]="rows" [columns]="columns"></ngx-datatable>
+            <ngx-datatable 
+            	class="material" 
+            	[headerHeight]="50"
+            	[rows]="rows" 
+            	[rowHeight]="'auto'"
+            	[columns]="columns" 
+            	[limit]="8" 
+            	[columnMode]="'force'"
+            	(rowContextmenu)="onContextmenu($event);"
+            	[footerHeight]="50"></ngx-datatable>
         </div>
     </div>
 </div>
