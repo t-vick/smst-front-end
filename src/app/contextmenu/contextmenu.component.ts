@@ -6,7 +6,7 @@ import { MdDialogRef } from '@angular/material';
 	moduleId: module.id,
 	selector: 'contextmenu',
 	templateUrl: './contextmenu.component.html',
-	styleUrls: ['./contextmenu.component.css']
+	styleUrls: ['./contextmenu.component.scss']
 })
 export class ContextmenuComponent {
 	constructor(private dialogRef: MdDialogRef<ContextmenuComponent>) {
